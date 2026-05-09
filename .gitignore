@@ -1,1 +1,27 @@
-node_modules
+# Dependências
+node_modules/
+
+# Expo / React Native
+.expo/
+dist/
+web-build/
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+
+# Logs e Debug
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+
+# Arquivos do Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Variáveis de Ambiente
+.env
+.env.local
+.env.*.local
