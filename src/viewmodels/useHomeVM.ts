@@ -56,4 +56,54 @@ export function useHomeVM() {
         return 'Boa noite';
     };
 
+    // Pega o primeiro nome do usuário.
+    const getPrimeiroNome = (): string => {
+        if (!user?.nome) return 'usuário';
+        return user.nome.split(' ')[0];
+    };
+
+    // Faz logout — limpa storage e volta pro login.
+    const fazerLogout = () => {
+        Alert.alert(
+            'Sair da conta',
+            'Tem certeza que deseja sair?',
+            [
+                { text: 'Cancelar', style: 'cancel' },
+                {
+                    text: 'Sair',
+                    style: 'destructive',
+                    onPress: async () => {
+                        await logoutStore();
+                        navigation.replace('Login');
+                    },
+                },
+            ]
+        );
+    };
+
+     const acionarPanico = () => {
+        Alert.alert(
+            'Pânico',
+            'O botão de pânico será implementado na próxima sprint.\n\nQuando estiver pronto, ele vai acionar alertas para seus contatos de emergência.',
+            [{ text: 'OK' }]
+        );
+    };
+
+    // Navega pra tela de perfil.
+    const irParaPerfil = () => {
+        navigation.navigate('Profile');
+    };
+
+    return {
+        user,
+        status,
+        carregando,
+        atualizando,
+        saudacao: getSaudacao(),
+        primeiroNome: getPrimeiroNome(),
+        carregarStatus,
+        fazerLogout,
+        acionarPanico,
+        irParaPerfil,
+    };
 }
