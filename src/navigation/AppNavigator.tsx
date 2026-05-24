@@ -6,6 +6,7 @@ import { useAppStore } from '@store/useAppStore';
 import SplashScreen from '@screens/Auth/SplashScreen';
 import LoginScreen from '@screens/Auth/LoginScreen';
 import RegisterScreen from '@screens/Auth/RegisterScreen';
+import ForgotPasswordScreen from '@screens/Auth/ForgotPasswordScreen'
 import HomeScreen from '@screens/Home/HomeScreen';
 import ProfileScreen from '@screens/Profile/ProfileScreen';
 
@@ -13,6 +14,7 @@ export type RootStackParamList = {
     Splash: undefined;
     Login: undefined;
     Register: undefined;
+    ForgotPassword: undefined;
     Home: undefined;
     Profile: undefined;
 };
@@ -35,6 +37,12 @@ export default function AppNavigator() {
                 <Stack.Screen name="Splash" component={SplashScreen} />
                 <Stack.Screen name="Login" component={LoginScreen} />
                 <Stack.Screen name="Register" component={RegisterScreen} />
+
+                <Stack.Screen
+                    name="ForgotPassword"
+                    component={ForgotPasswordScreen}
+                />
+
                 <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="Profile" component={ProfileScreen} />
             </Stack.Navigator>
