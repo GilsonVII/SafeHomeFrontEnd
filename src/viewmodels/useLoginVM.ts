@@ -111,9 +111,9 @@ export function useLoginVM() {
         navigation.navigate('Register');
     };
 
-    // Placeholder pra "Esqueci minha senha" — implementar tela depois.
+   // Navega pra tela de recuperação de senha
     const esqueciSenha = () => {
-        Alert.alert('Em breve', 'A funcionalidade de recuperação de senha está em desenvolvimento.');
+        navigation.navigate('ForgotPassword');
     };
 
     // Retorna TUDO o que a View precisa
